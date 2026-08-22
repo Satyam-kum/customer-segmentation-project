@@ -1,0 +1,825 @@
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #172033;
+
+  background: #f5f7fb;
+
+  font-synthesis: none;
+
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  min-height: 100vh;
+
+  background: #f5f7fb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* ============================================================
+   APP
+   ============================================================ */
+
+.app {
+  display: flex;
+
+  min-height: 100vh;
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 250px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  padding: 24px 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    0 8px
+    28px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #2563eb;
+
+  font-weight: 800;
+
+  font-size: 14px;
+}
+
+.brand h1 {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.2;
+}
+
+.brand span {
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+.navigation {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  color: #9ca3af;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.nav-link:hover {
+  background: #1f2937;
+
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+
+  padding:
+    16px 8px
+    0;
+
+  border-top:
+    1px solid
+    #1f2937;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.main-content {
+  margin-left: 250px;
+
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+
+  padding: 32px;
+}
+
+.page {
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-bottom: 28px;
+}
+
+.page-header h2 {
+  margin:
+    0 0 7px;
+
+  font-size: 26px;
+
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   STAT CARDS
+   ============================================================ */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: #ffffff;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 1px 2px
+    rgba(15, 23, 42, 0.04);
+}
+
+.stat-card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.stat-title {
+  color: #6b7280;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.stat-value {
+  margin-top: 15px;
+
+  font-size: 25px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.stat-subtitle {
+  margin-top: 6px;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   CHARTS
+   ============================================================ */
+
+.charts-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.7fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.chart-card,
+.content-card {
+  background: #ffffff;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 1px 2px
+    rgba(15, 23, 42, 0.04);
+}
+
+.chart-header,
+.section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.chart-header h3,
+.section-header h3 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.chart-header p,
+.section-header p {
+  margin:
+    5px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+.chart-container {
+  width: 100%;
+
+  height: 330px;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+
+  padding:
+    12px 14px;
+
+  color: #6b7280;
+
+  background: #f9fafb;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  border-bottom:
+    1px solid
+    #e5e7eb;
+}
+
+td {
+  padding:
+    14px;
+
+  border-bottom:
+    1px solid
+    #f0f1f3;
+
+  font-size: 13px;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+.customer-link {
+  border: 0;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  padding: 0;
+}
+
+.segment-badge {
+  display: inline-block;
+
+  padding:
+    5px 9px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SEGMENTS
+   ============================================================ */
+
+.segment-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.segment-card {
+  background: #ffffff;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 22px;
+}
+
+.segment-number {
+  color: #9ca3af;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.segment-card h3 {
+  margin:
+    8px 0 20px;
+
+  font-size: 19px;
+}
+
+.segment-stat {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding:
+    11px 0;
+
+  border-top:
+    1px solid
+    #f0f1f3;
+
+  font-size: 13px;
+}
+
+.segment-stat span {
+  color: #6b7280;
+}
+
+.segment-stat strong {
+  color: #172033;
+}
+
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+
+.search-bar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid
+    #d1d5db;
+
+  border-radius: 9px;
+
+  padding:
+    0 12px;
+
+  max-width: 600px;
+
+  margin-bottom: 20px;
+
+  background: #ffffff;
+}
+
+.search-bar input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: 0;
+
+  outline: none;
+
+  padding:
+    12px 0;
+
+  font-size: 13px;
+}
+
+.primary-button {
+  border: 0;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  padding:
+    9px 14px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 20px;
+
+  font-size: 13px;
+}
+
+.pagination button {
+  padding:
+    8px 14px;
+
+  border:
+    1px solid
+    #d1d5db;
+
+  background: #ffffff;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   CHURN
+   ============================================================ */
+
+.prediction-result {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-top: 22px;
+}
+
+.prediction-result > div {
+  padding: 16px;
+
+  background: #f9fafb;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.prediction-result span {
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+.prediction-result strong {
+  font-size: 14px;
+}
+
+.risk-high {
+  color: #dc2626;
+
+  font-weight: 700;
+}
+
+.risk-medium {
+  color: #d97706;
+
+  font-weight: 700;
+}
+
+.risk-low {
+  color: #059669;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   STATES
+   ============================================================ */
+
+.loading {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  min-height: 250px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.empty-state {
+  text-align: center;
+
+  padding: 50px;
+
+  color: #9ca3af;
+}
+
+.error-box {
+  padding: 15px 18px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  border:
+    1px solid
+    #fecaca;
+
+  border-radius: 9px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (
+  max-width: 1100px
+) {
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .charts-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .segment-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .prediction-result {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+@media (
+  max-width: 750px
+) {
+
+  .sidebar {
+    position: static;
+
+    width: 100%;
+
+    height: auto;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .navigation {
+    flex-direction: row;
+
+    overflow-x: auto;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .segment-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .prediction-result {
+    grid-template-columns:
+      1fr;
+  }
+
+  .page-header h2 {
+    font-size: 21px;
+  }
+}
